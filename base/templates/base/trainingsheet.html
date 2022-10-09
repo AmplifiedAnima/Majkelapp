@@ -1,0 +1,35 @@
+{% include 'homemain.html'%}
+
+{% block content %}
+<style>
+.container{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    text-align: left;
+}
+.column {
+    float: left;
+    display: block;
+  
+    padding: 10px;
+}
+
+.row {
+content: "";
+display: table;
+clear: both;
+padding: 15px;
+}
+</style>
+<div class="container">
+    <div class="column">
+        <p><form method="POST" action =""></p>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="Submit" value ="Submit"/>
+        </form>
+    </div>
+</div>
+{% endblock content %}

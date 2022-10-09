@@ -1,0 +1,90 @@
+<style>
+
+  .topnav {
+    overflow: hidden;
+    background-color: #A28BE7;
+
+  }
+  
+  .topnav a {
+    float: left;
+    color: black;
+    text-align: right;
+   
+    text-decoration: none;
+    font-size:20px;
+   
+    border-style: outset;
+    border: 2px solid black;
+   border-radius: 10px;
+    padding: 15px;
+
+  }
+  .topnav a:hover {
+    background-color: #E1D9F7;
+    color: black;
+    background-image: linear-gradient(#A28BE7, white);
+  }
+  
+  .topnav a.active {
+    background-color: #E1D9F7;
+    color: #A28BE7;
+  }
+  .container {
+    background-color: #A28BE7;
+    color: black;
+  }
+      .rezz {
+        width: 150px;
+        height: auto;
+        position: static;
+        position: absolute;
+        top: 0px;
+        right: 10px;
+       }
+
+</style>
+
+{%block content %}
+{%load static%}
+
+<div class="container">
+  <img class="rezz" src="{% static 'image/Hermeticstaff.png' %}"/>
+
+</div>
+<div class="imgago">
+
+  <img class="resize" src="{% static 'image/zmiana.png' %}"/>
+
+
+</div>
+</div>
+<div class='topnav'>
+
+  
+  
+  </div>
+<div class='topnav'> 
+
+  <h4><a href=" {% url 'home' %}">Home </h4></a>
+
+ 
+    <h4><a href="{% url 'dictionary' %}"> Dictionary </a></h4>
+   
+
+
+    <h4><a href="{% url 'trainingprograms' %}"> Training plans </a></h4>
+
+    <h4><a href="{% url 'profiles' %}"> User profiles</a></h4>
+    {% if request.user.is_authenticated %}
+
+
+    <h4><a href="{% url 'logout'%}"> Logout @ {{request.user.username}}</a></h4>
+    {% else %}
+    <h4><a href="{% url 'login' %}"> Login @ {{request.user.username}}</a></h4>
+    
+    {% endif %}
+   
+
+{% endblock content%}
+</div>

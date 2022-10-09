@@ -1,0 +1,14 @@
+{% extends 'main.html'%}
+ 
+{% block content %}
+<h1> Interfejs strony</h1>
+
+<div>
+        <div>
+            {%for podstrona in podstrony%}
+            <div>
+                <h5>{{podstrona.id}} --{{podstrona.name}}
+            </div>
+            {% endfor %}
+{% endblock content %}
+

@@ -1,0 +1,111 @@
+{% extends 'homemain.html'%}
+
+
+{% block content %}
+<style>
+    .home-container{
+        display: grid;
+        grid-template-columns:   1fr  1fr;
+    }
+
+    .topnav s{
+  
+        text-decoration: none;
+        font-size:8px;
+        float: left;
+        border-style: outset;
+        border: 1px solid black;
+       border-radius: 2px;
+        padding: 10px;
+    
+      }
+</style>
+
+
+
+    <div class="topnav s">
+        <h3><a href="{% url 'addword' %}"> Add word</a></h3>
+    </div>
+<div class="home-container">
+    
+
+   
+</div>
+<div>
+ 
+
+    <div>
+       
+        <table style="width:80%">
+         
+            <thead>
+                <style>
+                    .container {
+                       border-bottom: 50px black;
+                     }
+                   
+                     .styled-table {
+                       border-collapse: collapse;
+                       margin: 25px 0;
+                       font-size: 1.1em;
+                       font-family: sans-serif;
+                       min-width:1500px;
+                       box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+                   }
+                   
+                   .styled-table thead tr {
+                       background-color: black;
+                       color: #ffffff;
+                       text-align: center;
+                   }
+                   .styled-table tbody tr {
+                       border-bottom: 2px solid #dddddd;
+                       text-align: center;
+                   }
+                   
+                   .styled-table tbody tr:nth-of-type(even) {
+                    background-color: #e0ccff;}
+                   
+                   .styled-table tbody tr:last-of-type {
+                       border-bottom: 4px solid black;
+                   }
+                   .styled-table tbody tr.active-row {
+                       font-weight: bold;
+                       color: #009879;
+                   }
+                
+                   .styled-table tbody tr.active-row {
+                    font-weight: bold;
+                    color: #009879;
+                }
+                   </style>
+    <div class="container">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>English word</th>
+                    <th>Polish word</th>
+                    <th>Origin </th>
+                    <th> Edit </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for word in words %}
+                <tr>
+                  
+                    <td><a href="{% url 'word' word.id %}">{{word.english}}</a> </a></td>
+                    <td><a href="{% url 'word' word.id %}">{{word.polish}} </a></td>
+                    <td>{{word.genre}}</td>
+                    <td><a href="{% url 'wordform' word.id %}"> Edit </a><a>or</a>
+                        <a href="{% url 'deleteword' word.id %}"> Delete</a></td>
+
+                </tr>
+                {% endfor %}
+            
+            </tbody>
+        </table>
+ 
+</div>
+
+
+{% endblock content %}

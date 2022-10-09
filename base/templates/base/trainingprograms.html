@@ -1,0 +1,100 @@
+{% extends 'homemain.html' %}
+
+
+
+{% block content %}
+<style>
+      
+  .topnav s{
+  
+    text-decoration: none;
+    font-size:4px;
+    float: right;
+    border-style: outset;
+    border: 2px solid black;
+   border-radius: 3px;
+    padding: 8px;
+
+  }
+  
+  color: black;
+  text-align: right;
+  padding: 10px;
+    .container {
+       border-bottom: 30px black;
+     }
+   
+     .styled-table {
+       border-collapse: collapse;
+       margin: 30px 0;
+       font-size: 1,5em;
+       font-family: sans-serif;
+       min-width:1520px;
+       
+       box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+   }
+   
+   .styled-table thead tr {
+       background-color: black;
+       color: #ffffff;
+       text-align: center;
+   }
+   .styled-table tbody tr {
+       border-bottom: 1px solid #dddddd;
+       text-align: center;
+   }
+   
+   .styled-table tbody tr:nth-of-type(even) {
+    background-color: #e0ccff;
+}
+   
+   .styled-table tbody tr:last-of-type {
+       border-bottom: 4px solid black;
+   }
+   .styled-table tbody tr.active-row {
+       font-weight: bold;
+       color: #009879;
+       
+   }
+
+   .styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+   </style>
+
+<div class="topnav s">
+    <h1><a href="{% url 'addtrainingunit' %}"> Add training plan</a></h1>
+</div>
+
+<div class="container">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Training sheet</th>
+                    <th>User</th>
+                    <th>Mesocycle</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trainingplan in trainingp %}
+                <tr>
+                  
+                    <td><a href="{% url 'trainingplan' trainingplan.id %}"> Training sheet</a></td>
+                    <td>{{trainingplan.user}}</td>
+                    <td>{{trainingplan.mesocycle}}</td>
+                    <td> <a href="{% url 'trainingsheet' trainingplan.id %}">Edit</a> or <a href="{% url 'deletetraining' trainingplan.id %}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            
+            </tbody>
+        </table>
+ 
+</div>
+
+
+
+
+
+{% endblock content %}

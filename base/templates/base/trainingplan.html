@@ -1,0 +1,262 @@
+{%include 'homemain.html' %}
+
+{% block content %}
+<style>
+     
+    .imgago {
+   
+    }
+    .topnavixgrand {
+        float: left;
+        color: black;
+        text-align: left;
+        padding: 7px 15px;
+        text-decoration: none;
+        font-size:18px;
+       
+        border-style: outset;
+        border: 3px solid black;
+       border-radius: 20px;
+        margin 1px;
+    
+      }
+
+    .topnavix {
+        float: left;
+        color: black;
+        text-align: right;
+        padding: 15px 5px;
+        text-decoration: none;
+        font-size:16px;
+       
+        border-style: inline;
+        border: 5px solid black;
+       border-radius: 20px;
+        padding: 5px;
+    
+      }
+
+   .styled-table {
+    border-collapse: collapse;
+    margin: 30px ;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 841px;
+    box-shadow: 45 35 30px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: black;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+   
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    text-align: left;
+   
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+{
+    box-sizing: border-box;
+  }
+
+.column {
+    float: left;
+    display: block;
+  
+    padding: 15px;
+}
+
+.row {
+content: "";
+display: table;
+clear: both;
+padding: 15px;
+}
+.container{   font-size: 0.8em;
+    font-family: sans-serif;
+    padding: 10px;
+    text-align: left;
+    }
+</style>
+<div class="topnavixgrand">
+    <div class="row">
+    
+      
+        <div class="column">
+            
+                <table class="styled-table">
+                            <thead>
+                              
+                            <tr>
+                                <th>Exercise</th>
+                                <th>Volume Sets</th>
+                                <th>Volume Reps</th>
+                                <th>Intensity</th>
+                                <th>Week<th>
+                            </tr>
+                            <tbody> 
+                                <td>Squat </td>
+                                <td>{{a.0}}</td>
+                                <td>{{a.1}}</td>
+                                <td>{{a.2}}</td>
+                                <td>I<td>
+                                </tr>
+                                <tr> 
+                                <td></td>
+                                <td>{{b.0}}</td>
+                                <td>{{b.1}}</td>
+                                <td>{{b.2}}</td>
+                                <td>II<td>
+                                </tr>
+                                <tr> 
+                                <td></td>
+                                <td>{{c.0}}</td>
+                                <td>{{c.1}}</td>
+                                <td>{{c.2}}</td>
+                                <td>III<td>
+                                </tr>
+                                <tr>
+                                <td></td>
+                                <td>{{d.0}}</td>
+                                <td>{{d.1}}</td>
+                                <td>{{d.2}}</td>
+                                <td>IV<td>
+                                </tr>
+                            </tbody>
+                
+                </table>
+                <table class="styled-table">
+                            <thead>
+                                <tr>
+                                <th>Exercise</th>
+                                <th>Volume Sets</th>
+                                <th>Volume Reps</th>
+                                <th>Intensity</th>
+                                <th>Week<th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td>Deadlift</td>
+                                <td>{{a1.0}}</td>
+                                <td>{{a1.1}}</td>
+                                <td>{{a1.2}}</td>
+                                <td>I<td>
+                                </tr>
+                                <td></td>
+                                <td>{{b1.0}}</td>
+                                <td>{{b1.1}}</td>
+                                <td>{{b1.2}}</td>
+                                <td>II<td>
+                                </tr>
+                                <td></td>
+                                <td>{{c1.0}}</td>
+                                <td>{{c1.1}}</td>
+                                <td>{{c1.2}}</td>
+                                <td>III<td>
+                                </tr>
+                                <tr>
+                                <td></td>
+                                <td>{{d1.0}}</td>
+                                <td>{{d1.1}}</td>
+                                <td>{{d1.2}}</td>
+                                <td>IV</td>
+                                </tr>
+                            </tbody>
+                </table>
+            
+                <table class="styled-table">
+                            <thead>
+                                <tr>
+                                <th>Exercise</th>
+                                <th>Volume Sets</th>
+                                <th>Volume Reps</th>
+                                <th>Intensity</th>
+                                <th>Week<th>
+                                </tr>
+                            </thead>
+                    
+                            <tbody>
+                            
+                                <tr>
+                                <td>Benchpress</td>
+                                <td>{{a2.0}}</td>
+                                <td>{{a2.1}}</td>
+                                <td>{{a2.2}}</td>
+                                <td>I<td>
+                                </tr>
+                                <tr>
+                                <td></td>
+                                <td>{{b2.0}}</td>
+                                <td>{{b2.1}}</td>
+                                <td>{{b2.2}}</td>
+                                <td>II<td>
+                                </tr>
+                                <td></td>
+                                <td>{{c2.0}}</td>
+                                <td>{{c2.1}}</td>
+                                <td>{{c2.2}}</td>
+                                <td>III<td>
+                                </tr>
+                                <tr>
+                                <td></td>
+                                <td>{{d2.0}}</td>
+                                <td>{{d2.1}}</td>
+                                <td>{{d2.2}}</td>
+                                <td>IV<td>
+                                </tr>
+                            </tbody>
+                </table>
+                  
+        </div>
+        <div class=topnavix>
+            <div class="column">
+                <div class="container">
+                    
+                    <h3>Mesocycle: {{training.mesocycle}}</h3>
+                    <h3>Week I</h3>
+                    <h3>Training day I</h3>
+                    <p>I. SQUAT (For each week choose intensity/sets/reps one the left) </p>
+                    <p>II. {{lowerbodyunilateral}} (Lower body- unilateral), Sets {{lowbodyunisets}},  Reps {{lowerbodunireps}}
+                    <p>III. {{coretraining}} (Core), Sets {{corexosets}}, Reps {{corexoreps}}
+                        
+                    <h3>Training day II</h3>
+                    <p>I.DEADLIFT (For each week choose intensity/sets/reps one the left) </p>
+                    <p>II. {{upperbodybilateral}} (Upper body- bilateral), Sets {{upperbis}} ,Reps {{upperbireps}}</p>
+                    <p>III. {{wholebodyexercise}} (Whole body exercise), Sets {{wholebodset}}, Reps {{wholebodrep}}</p>
+                
+                    <h3>Training day III </h3>
+                    <p>I. BENCHPRESS (For each week choose intensity/sets/reps one the left) </p>
+                    <p>II. {{upperbodyunilateral}} (Upper body- unilateral), Sets {{uperunis}}, Reps {{uperunireps}}</p>
+                
+                    <p>III. {{lowerbodybilateral}} (Lower body- bilateral), Sets {{lowerbodybisetos}}, Reps {{lowbireps}}</p>
+                    
+                </div>
+            
+        
+                <div class="container">
+                    <p>*Autoregulate volume and intensity as needed.</p>
+                    <p> Remember, listening to your body is</p>
+                        <p>  ...beneficial in the long run.</p>
+                    </div>
+
+        </div>
+        {% load static %}
+        
+    </div>
+</div>
+
+{%endblock%}

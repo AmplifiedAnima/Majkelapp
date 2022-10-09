@@ -1,0 +1,18 @@
+{% extends 'homemain.html'%}
+
+{%block content%}
+<div>   
+    <h1> Add word </h1>
+    <form action="{% url 'addword'%}"method="POST">
+        {%csrf_token%}
+        <table>
+        {{word}}
+        </table>
+    
+        <input type= "Submit" value="Submit"/>
+   
+    </form>
+    <a href="{% url 'dictionary' %}">Go back to dictionary</a>
+</div>  
+
+{%endblock content%}

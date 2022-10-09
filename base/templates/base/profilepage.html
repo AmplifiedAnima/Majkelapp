@@ -1,0 +1,143 @@
+{% include 'homemain.html'%}
+
+{% block content %}
+<style>
+ .container {
+    border-bottom: 30px black;
+  }
+
+  .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: black;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 4px solid black;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 200px;
+    height:250px;
+    border: 2px solid black;
+    /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align:center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #A28BE7;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: #A28BE7;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .imgresizol{
+    position:relative;
+    width: 130px;
+        height: auto;
+  }
+</style>
+<div class="container">
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Weight</th>
+                <th>Height</th>
+                <th> type of training</th>
+                <th> Training sheet<th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a in user_training%}
+            <tr>
+                <td>{{profilopage.name}}</td>
+                <td>{{profilopage.waga}} kg</td>
+                <td>{{profilopage.wzrost}} cm</td>
+                <td>{{a.mesocycle}}</td>
+                <td><a href="{% url 'trainingplan' a.id %}">  Training plan </a>  </td>
+       
+    {% endfor %}
+            <!-- and so on... -->
+        </tbody>
+    </table>
+
+  
+</div> 
+    <p></p>
+
+</div>
+{%load static %}
+<div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+      <br><br>
+      <br><br>
+    
+        <h4> Discover more information!</h4>
+        <div class ="imgresizol">
+        <img src="{% static 'image/mmm.png' %}" alt="Avatar" style="width:75px;height:75px">
+        </div>
+         
+      </div>
+    
+        <div class="flip-card-back">
+              <img src="{%static 'image/instagramicon.png' %}" alt="Avatar" style="width:50px;height:auto;">
+            <h1>{{profilopage.name}}</h1>
+            <p>{{profilopage.waga}} kg</p>
+            <p>{{profilopage.wzrost}} cm</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'homemain.html'%}
+
+{%block content%}
+
+<div>
+        <h1> Add training plan based on 1%RM</h1>
+    </div>
+        <form action="{% url 'addtrainingunit' %}" method="POST">
+            
+            {%csrf_token%}
+            <table>
+            <p>
+            {{training}}
+            </p>
+            </table>
+            <button type="Submit">Submit</button>
+        
+        </form>
+    </div>
+   
+</div>  
+
+{%endblock content%}
+
+
